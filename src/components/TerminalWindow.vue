@@ -4,6 +4,7 @@
     <form @submit="handleSubmit">
 <textarea class="input" v-model="inputValue"
 @keydown.enter="handleEnterKey"/> 
+
     </form>
  
   </div>
@@ -25,15 +26,15 @@ cat:''
 methods:{
   handleSubmit(event){
     event.preventDefault();
-    if(this.inputValue==='cd portfolio'){
+    if(this.inputValue.toLowerCase() ==='cd portfolio'){
       this.$router.push("Portfolio")
     }
-      else if(this.inputValue ==='cd about'){
+      else if(this.inputValue.toLocaleLowerCase() ==='cd about'){
       this.$router.push("About")
-    } else if(this.inputValue ==='git --help'){
+    } else if(this.inputValue.toLocaleLowerCase() ==='git --help'){
       this.help1 = "cd about will take you to the ABOUT page \ncd portfolio will take you to the portfolio page \ncat will display contents of a file\n'Enter' will clear the console";
       this.inputValue = this.help1;
-    } else if(this.inputValue ==='cat'){
+    } else if(this.inputValue.toLocaleLowerCase() ==='cat'){
       this.cat = " By contents of a file I actually meant hello meow\n            /\\     /\\\n" +
                  "           {  `---'  }\n" +
                  "           {  O   O  }\n" +
@@ -72,6 +73,7 @@ methods:{
 
 <style>
  @media screen and (min-width: 300px) {
+ 
 .window{
   display: flex;
   padding-bottom: 5rem;

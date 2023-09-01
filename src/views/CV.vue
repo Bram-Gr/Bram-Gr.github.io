@@ -193,7 +193,7 @@ methods: {
 .top-page{
   text-align: left;
   color: whitesmoke;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
     margin-left:1rem;
     margin-right:1rem;
     margin-top:6rem;
@@ -242,7 +242,7 @@ a{
 }
 
 
-p{
+.top-page p{
     text-align: left;
     color: whitesmoke;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);

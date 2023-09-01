@@ -3,11 +3,7 @@
     <!-- <h1 id="about">HOME</h1> -->
 
     <div class="description">
-      <p>Hello, my name is Bram Groen, welcome to my portfolio website! You'll find details about projects
-        I've worked on in the portfolio page. If you'd like to read about some of the technologies 
-        I've used in respect to the programming languages I've worked with, that can be found on About page. 
-        The About page also share some details about my education background as well as ways to get in contact.
-        Feel free to reach out, I'd love to connect!</p></div>
+      <p>Welcome to my portfolio site! You can use the navigation at the top of the page or the terminal below to visit other pages here. To change to different pages with the terminal use the change directory command. For example, if you wanted to change to the ABOUT page you can type cd about. For more information on the terminal <a href="https://en.wikipedia.org/wiki/Windows_Terminal">click here</a>. Also feel free to reach out, I'd love to connect!</p></div>
      
 <terminal-window/>
   </div>
@@ -23,9 +19,15 @@ export default{
 </script>
 <style scoped>
  @media screen and (min-width: 300px) {
-
+a{
+  color:rgb(79, 78, 78);
+  text-decoration: none;
+  font-weight: bold;
+}
 p{
-
+  box-shadow: 4px 4px 10px rgba(25, 20, 20, 0.247);
+    background-color:rgba(35, 36, 39, 0.347) ;
+    padding:2rem;
   text-align: left;
 }
 .description{
@@ -38,7 +40,6 @@ p{
   /* margin-top: 7rem; */
   /* margin-left: 2rem;
   margin-right: 2rem; */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   font-size: 1rem;
 
   }
