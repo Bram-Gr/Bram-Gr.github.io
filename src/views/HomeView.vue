@@ -58,7 +58,7 @@ data(){
 #main{
   display: flex;
   justify-content: center;
-  padding-top: 3rem;
+  padding-top:6rem;
   color: white;
 }
 .pic-icons{  
