@@ -93,7 +93,7 @@
 
 <style scoped>
 .top{
-  margin-top: 20rem;
+  padding-top: 6rem;
 }
 .form{
   padding-left: 5rem;

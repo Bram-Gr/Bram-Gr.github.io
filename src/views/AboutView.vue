@@ -9,7 +9,7 @@
 </template>
 <style scoped>
 .about{
-  padding-top: 20rem;
+  padding-top: 10rem;
   display: flex;
   justify-content: center;
   padding-left: 2rem;

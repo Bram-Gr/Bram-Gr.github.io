@@ -9,17 +9,25 @@
       type="light"
       class="navigation-menu navigation-container"
     >
-      <b-navbar-brand class="logo" @click="scrollTo('#home')"
-        >[bram.com]</b-navbar-brand
+      <b-navbar-brand class="logo" @click="scrollTo('#home', 'home')"
+        >
+        <span :class="{ 'active': activeBreadcrumb === 'home' }">[bram.com]</span>
+        </b-navbar-brand
       >
 
       <b-breadcrumb class="breadcrumbs">
-        <b-breadcrumb-item @click="scrollTo('#about')">About</b-breadcrumb-item>
-        <b-breadcrumb-item @click="scrollTo('#portfolio')"
-          >Portfolio</b-breadcrumb-item
+        <b-breadcrumb-item @click="scrollTo('#about', 'about')">
+          <span :class="{ 'active': activeBreadcrumb === 'about' }">About</span>
+        </b-breadcrumb-item>
+        <b-breadcrumb-item @click="scrollTo('#portfolio', 'portfolio')"
+          >
+          <span :class="{ 'active': activeBreadcrumb === 'portfolio' }">Portfolio</span>
+          </b-breadcrumb-item
         >
-        <b-breadcrumb-item @click="scrollTo('#contact')"
-          >Contact</b-breadcrumb-item
+        <b-breadcrumb-item @click="scrollTo('#contact', 'contact')"
+          >
+          <span :class="{ 'active': activeBreadcrumb === 'contact' }">Contact</span>
+          </b-breadcrumb-item
         >
       </b-breadcrumb>
     </b-navbar>
@@ -29,7 +37,7 @@
 
 <div class="content">
     <div id="home" class="section">
-      <home/>
+      <home @routerLinkClicked="handleRouterLinkClicked" />
     </div>
 
     <div id="about" class="section">
@@ -61,11 +69,25 @@ import Portfolio from './views/PortfolioView.vue';
 import Contact from './views/ContactView.vue';
 export default {
   components: { BNavbar, BNavbarBrand, BBreadcrumb, BBreadcrumbItem, Home, About, Portfolio, Contact },
+  data(){
+    return{
+      activeBreadcrumb: 'home'
+    }
+  },
   methods: {
-    scrollTo(selector) {
+    handleRouterLinkClicked(route) {
+      // notifies App.vue of emitted event
+        this.$nextTick(() => {
+      // uses the contact and calls on App.vue's scrollTo
+        this.scrollTo(`#${route}`, route);
+      });
+    },
+    scrollTo(selector, targetId) {
+
       const element = document.querySelector(selector);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
+        this.activeBreadcrumb = targetId;
       }
     },
   },
@@ -73,8 +95,10 @@ export default {
 </script>
   
   <style scoped>
+  .section{
+    height: 100vh;
+  }
 .nav-container{
-
   z-index: 1;
   background-color: #5bc0be;
   position: sticky;
@@ -102,6 +126,10 @@ a{
 }
 .router-link-exact-active{
     font-weight: bold;
+  text-decoration: underline;
+}
+.active{
+  font-weight: bold;
   text-decoration: underline;
 }
 

@@ -5,7 +5,7 @@
 <h1 class="title">Portfolio</h1>
 
   <div class="cards-section">
-  <b-card no-body class="overflow-hidden" style="max-width: 540px;" v-for="card in cards" :key="card">
+  <b-card no-body class="overflow-hidden" style="max-width: 540px;" v-for="card in cards" :key="card.id">
     <b-row no-gutters>
       <b-col md="6">
         <b-card-img :src=card.image alt="Image" class="rounded-0"></b-card-img>
@@ -31,9 +31,9 @@ export default {
 data(){
   return{
     cards: [
-      {image:'',  title:'', text: '',urlWeb: '', urlCode: ''},
-      {image:'',  title:'', text: '',urlWeb: '', urlCode: ''},
-      {image:'',  title:'', text: '',urlWeb: '', urlCode: ''},    
+      {id:1, image:'',  title:'', text: '',urlWeb: '', urlCode: ''},
+      {id:2, image:'',  title:'', text: '',urlWeb: '', urlCode: ''},
+      {id:3, image:'',  title:'', text: '',urlWeb: '', urlCode: ''},    
   ]
   }
 }
@@ -46,7 +46,7 @@ data(){
   
 }
 .title{
-  margin-top: 20rem;
+  padding-top: 5rem;
   display: flex;
   justify-content: center;
 }

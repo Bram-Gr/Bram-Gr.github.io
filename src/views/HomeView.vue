@@ -10,7 +10,8 @@
  <ul>
       <li><a href="https://github.com/Bram-Gr"><i class="fa fa-github" style="font-size:36px"></i></a></li>
       <li><a href="https://www.linkedin.com/in/groenbram/"><i class="fa fa-linkedin" style="font-size:36px"></i></a></li>
-      <li><router-link  v-bind:to="{ name: 'contact' }"><i class="fa fa-envelope" style="font-size:36px"></i></router-link></li>
+      <li class="envelope" @click="handleRouterLinkClick"><i class="fa fa-envelope" style="font-size:36px"></i></li>
+      <!-- <li><router-link  v-bind:to="{ name: 'contact' }" ><i class="fa fa-envelope" style="font-size:36px"></i></router-link></li> -->
     </ul>
   </div>
   </div>
@@ -25,7 +26,13 @@ data(){
   return {
     headshot: headshot
   }
-}
+},
+methods: {
+    handleRouterLinkClick() {
+      // Emit a custom event to notify the parent component
+      this.$emit('routerLinkClicked', 'contact'); // Pass the route or any relevant information
+    }
+  }
 }
 </script>
 
@@ -81,7 +88,8 @@ align-items: center;
     padding-bottom: .4rem;
     box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.5);
   }
-  li a{
+  li a, .envelope{
+    cursor: pointer;
     margin-right:2rem;
     color:white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
