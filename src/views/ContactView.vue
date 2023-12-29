@@ -92,8 +92,13 @@
 </script>
 
 <style scoped>
-.top{
-  padding-top: 2rem;
+
+@media screen and (min-width: 200px) {
+
+  .top{
+    background-color: #5bc0be;
+  /* padding-top: 2rem; */
+  padding-bottom: 15rem;
   /* padding-bottom: 10rem; */
 }
 .form{
@@ -105,4 +110,10 @@
   justify-content: center;
   /* margin-top:2rem; */
 }
+}
+@media screen and (min-width: 500px) {
+
+}
+
+
 </style>

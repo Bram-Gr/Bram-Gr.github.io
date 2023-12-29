@@ -122,8 +122,17 @@ export default {
 </script>
   
   <style scoped>
+
+@media screen and (min-width: 200px) {
+.section:nth-child(4){
+margin-top: 40rem;
+
+}
+.section:nth-child(3){
+margin-top: 8rem;
+}
   .section{
-padding-top: 7rem;
+padding-top: 10rem;
 height: 100vh;
   }
 .nav-container{
@@ -165,5 +174,15 @@ a{
   height: 100%;
   background-color: #5bc0be;
 }
+}
+@media screen and (min-width: 500px) {
+  .section{
+padding-top: 7rem;
+height: 100vh;
+  }
+}
+
+
+
 
 </style>

@@ -8,9 +8,9 @@
  <img :src=headshot class="headshot" alt="headshot">
 <div class="social-icons">
  <ul>
-      <li><a href="https://github.com/Bram-Gr" target="_blank"><i class="fa fa-github" style="font-size:36px"></i></a></li>
-      <li><a href="https://www.linkedin.com/in/groenbram/" target="_blank"><i class="fa fa-linkedin" style="font-size:36px"></i></a></li>
-      <li class="envelope" @click="handleRouterLinkClick"><i class="fa fa-envelope" style="font-size:36px"></i></li>
+      <li><a href="https://github.com/Bram-Gr" target="_blank"><i class="fa fa-github"></i></a></li>
+      <li><a href="https://www.linkedin.com/in/groenbram/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+      <li class="envelope" @click="handleRouterLinkClick"><i class="fa fa-envelope" ></i></li>
       <!-- <li><router-link  v-bind:to="{ name: 'contact' }" ><i class="fa fa-envelope" style="font-size:36px"></i></router-link></li> -->
     </ul>
   </div>
@@ -38,7 +38,8 @@ methods: {
 
 <style scoped>
 
-.delayed-text {
+@media screen and (min-width: 200px) {
+  .delayed-text {
     display: inline-block;
     opacity: 0;
     animation: fadeIn 0s ease-in-out forwards;
@@ -75,7 +76,7 @@ justify-content: center;
 align-items: center;
 }
 .headshot{
-  height: 45vh;
+  height: 25vh;
   transform: scaleX(-1);
 }
 .social-icons ul{
@@ -90,13 +91,28 @@ align-items: center;
   }
   li a, .envelope{
     cursor: pointer;
-    margin-right:2rem;
+    margin-right:1rem;
     color:white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 1.5rem;
+  }
+  .text{
+    padding-top: 2rem;
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 500px) {
+  .headshot{
+  height: 45vh;
   }
   .text{
     padding-top: 3rem;
     font-size: 4rem;
     max-width: 30rem;
   }
+  li a, .envelope{
+    margin-right:2rem;
+    font-size: 2.5rem;
+  }
+}
 </style>
