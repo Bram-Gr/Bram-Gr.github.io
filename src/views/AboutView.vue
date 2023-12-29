@@ -9,11 +9,12 @@
 </template>
 <style scoped>
 .about{
-  padding-top: 10rem;
+  /* padding-top: 10rem; */
   display: flex;
   justify-content: center;
   padding-left: 2rem;
   padding-right: 2rem;
   font-size: 2rem;
+  /* padding-bottom: 6rem; */
 }
 </style>

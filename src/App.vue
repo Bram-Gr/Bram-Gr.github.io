@@ -57,6 +57,7 @@
 </template>
   
   <script>
+
 import {
   BNavbar,
   BNavbarBrand,
@@ -71,32 +72,59 @@ export default {
   components: { BNavbar, BNavbarBrand, BBreadcrumb, BBreadcrumbItem, Home, About, Portfolio, Contact },
   data(){
     return{
-      activeBreadcrumb: 'home'
+      activeBreadcrumb: null,
+      userScrolled: false
     }
   },
-  methods: {
-    handleRouterLinkClicked(route) {
-      // notifies App.vue of emitted event
-        this.$nextTick(() => {
-      // uses the contact and calls on App.vue's scrollTo
-        this.scrollTo(`#${route}`, route);
-      });
-    },
-    scrollTo(selector, targetId) {
-
-      const element = document.querySelector(selector);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-        this.activeBreadcrumb = targetId;
-      }
-    },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+    this.handleScroll(); 
   },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+
+  methods: {
+    handleScroll() {
+  const sections = ['home', 'about', 'portfolio', 'contact'];
+
+  for (const section of sections) {
+    const element = document.getElementById(section);
+    if (element) {
+      const rect = element.getBoundingClientRect();
+
+      console.log(section, rect.top, rect.bottom);
+
+      if (rect.top <= window.innerHeight / 2 && rect.bottom > 0) {
+        this.activeBreadcrumb = section;
+
+      }
+    }
+  }
+},
+
+  scrollTo(selector, targetId) {
+    const element = document.querySelector(selector);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+      this.activeBreadcrumb = targetId;
+    }, 500);
+    }
+  },
+  handleRouterLinkClicked(route) {
+    this.userScrolled = true;
+    this.scrollTo(`#${route}`, route);
+  },
+},
+
 };
 </script>
   
   <style scoped>
   .section{
-    height: 100vh;
+padding-top: 7rem;
+height: 100vh;
   }
 .nav-container{
   z-index: 1;

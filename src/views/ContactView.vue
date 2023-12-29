@@ -93,7 +93,8 @@
 
 <style scoped>
 .top{
-  padding-top: 6rem;
+  padding-top: 2rem;
+  /* padding-bottom: 10rem; */
 }
 .form{
   padding-left: 5rem;
@@ -102,6 +103,6 @@
 .title{
   display: flex;
   justify-content: center;
-  margin-top:2rem;
+  /* margin-top:2rem; */
 }
 </style>

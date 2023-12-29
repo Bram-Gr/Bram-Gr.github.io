@@ -46,7 +46,7 @@ data(){
   
 }
 .title{
-  padding-top: 5rem;
+  padding-top: 0rem;
   display: flex;
   justify-content: center;
 }
@@ -54,9 +54,10 @@ data(){
   padding-right: 3rem;
   padding-left: 3rem;
   padding-bottom: 5rem;
-  margin-top: 1.5rem;
+  /* margin-top: 1.5rem; */
   display: flex;
   justify-content: center;
+  /* padding-bottom: 10rem; */
 }
 
 </style>

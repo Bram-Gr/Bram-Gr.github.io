@@ -8,8 +8,8 @@
  <img :src=headshot class="headshot" alt="headshot">
 <div class="social-icons">
  <ul>
-      <li><a href="https://github.com/Bram-Gr"><i class="fa fa-github" style="font-size:36px"></i></a></li>
-      <li><a href="https://www.linkedin.com/in/groenbram/"><i class="fa fa-linkedin" style="font-size:36px"></i></a></li>
+      <li><a href="https://github.com/Bram-Gr" target="_blank"><i class="fa fa-github" style="font-size:36px"></i></a></li>
+      <li><a href="https://www.linkedin.com/in/groenbram/" target="_blank"><i class="fa fa-linkedin" style="font-size:36px"></i></a></li>
       <li class="envelope" @click="handleRouterLinkClick"><i class="fa fa-envelope" style="font-size:36px"></i></li>
       <!-- <li><router-link  v-bind:to="{ name: 'contact' }" ><i class="fa fa-envelope" style="font-size:36px"></i></router-link></li> -->
     </ul>
@@ -65,7 +65,7 @@ methods: {
 #main{
   display: flex;
   justify-content: center;
-  padding-top:6rem;
+  /* padding-top:6rem; */
   color: white;
 }
 .pic-icons{  
