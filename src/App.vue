@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-
+    
+    <div class="wave-container">
+<wave-bar/>
+  </div>
 
     <div class="nav-container">
     <b-navbar
@@ -35,6 +38,9 @@
 
 
 
+
+
+
 <div class="content">
     <div id="home" class="section">
       <home @routerLinkClicked="handleRouterLinkClicked" />
@@ -53,6 +59,12 @@
     </div>
   </div>
 
+
+
+
+
+
+
   </div>
 </template>
   
@@ -68,17 +80,19 @@ import Home from './views/HomeView.vue';
 import About from './views/AboutView.vue';
 import Portfolio from './views/PortfolioView.vue';
 import Contact from './views/ContactView.vue';
+import WaveBar from './components/WaveBar.vue'
 export default {
-  components: { BNavbar, BNavbarBrand, BBreadcrumb, BBreadcrumbItem, Home, About, Portfolio, Contact },
+  components: { BNavbar, BNavbarBrand, BBreadcrumb, BBreadcrumbItem, Home, About, Portfolio, Contact, WaveBar },
   data(){
     return{
       activeBreadcrumb: null,
-      userScrolled: false
+      userScrolled: false,
     }
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
     this.handleScroll(); 
+  
   },
   beforeUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
@@ -117,19 +131,31 @@ export default {
     this.scrollTo(`#${route}`, route);
   },
 },
-
 };
 </script>
   
   <style scoped>
 
 @media screen and (min-width: 200px) {
-.section:nth-child(4){
-margin-top: 40rem;
+
+.wave-container{
+  /* position:absolute;
+  z-index: 1; */
+}
+.section:nth-child(1){
+  position: inherit;
+margin-top: -3rem;
 
 }
+.section:nth-child(4){
+  position: inherit;
+margin-top: 28rem;
+display: flex;
+justify-content: center;
+/* z-index: -1; */
+}
 .section:nth-child(3){
-margin-top: 8rem;
+margin-top: 2rem;
 }
   .section{
 padding-top: 10rem;
@@ -171,8 +197,9 @@ a{
 }
 
 #app {
-  height: 100%;
+  /* height: 100%; */
   background-color: #5bc0be;
+
 }
 }
 @media screen and (min-width: 500px) {
@@ -180,6 +207,16 @@ a{
 padding-top: 7rem;
 height: 100vh;
   }
+  .section:nth-child(3){
+margin-top: 8rem;
+}
+  .section:nth-child(4){
+
+margin-top: 5rem;
+
+}
+
+
 }
 
 

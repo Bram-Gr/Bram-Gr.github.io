@@ -1,6 +1,6 @@
 <template>
 <div id="main">
-  <div class="text">
+  <div class="text" v-show="isWideScreen">
     <span class="delayed-text">Hi</span> <span class="delayed-text">I'm Bram, </span>
     <span class="delayed-text">Full-Stack Developer</span>
   </div>
@@ -24,15 +24,25 @@ import headshot from '../assets/Subject.png'
 export default {
 data(){
   return {
-    headshot: headshot
+    headshot: headshot,
+    isWideScreen: window.innerWidth > 500
   }
 },
+mounted() {
+    window.addEventListener('resize', this.handleResize);
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  },
 methods: {
+    handleResize() {
+      this.isWideScreen = window.innerWidth > 500;
+    },
     handleRouterLinkClick() {
       // Emit a custom event to notify the parent component
       this.$emit('routerLinkClicked', 'contact'); // Pass the route or any relevant information
     }
-  }
+}
 }
 </script>
 
@@ -64,22 +74,26 @@ methods: {
     animation-delay: 2.2s;
   }
 #main{
+
   display: flex;
   justify-content: center;
   /* padding-top:6rem; */
   color: white;
 }
 .pic-icons{  
+z-index: 0;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 }
 .headshot{
-  height: 25vh;
+  height: 35vh;
+
   transform: scaleX(-1);
 }
 .social-icons ul{
+  background-color: #5bc0be9a;
     margin-top: 2rem;
     list-style: none; 
     display: flex;
@@ -90,6 +104,7 @@ align-items: center;
     box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.5);
   }
   li a, .envelope{
+    /* z-index: 1; */
     cursor: pointer;
     margin-right:1rem;
     color:white;

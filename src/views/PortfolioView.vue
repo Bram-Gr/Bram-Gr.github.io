@@ -44,6 +44,8 @@ data(){
 
 @media screen and (min-width: 200px) {
   .card{
+    background-color: #5bc0be9a;
+    border: 3px solid white;
   max-width: 100rem;
   max-height: 30rem;
   margin-bottom: 1rem;
@@ -56,8 +58,8 @@ data(){
 }
 .cards-section{
   flex-wrap: wrap;
-  padding-right: 3rem;
-  padding-left: 3rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
   padding-bottom: 5rem;
   margin-top: 1.5rem;
   display: flex;
@@ -72,7 +74,14 @@ data(){
   max-height: 20rem;
   margin-right: 1rem;
   }
+
+  .cards-section{
+  padding-right: 0.2rem;
+  padding-left: 0.2rem;
+  }
+
 }
+
 
 
 

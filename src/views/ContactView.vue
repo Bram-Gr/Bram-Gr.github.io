@@ -1,5 +1,5 @@
 <template>
-  <div class="top">
+  <div id="main">
     <div class="title">Contact</div>
     <b-form  class="form" @submit="onSubmit" @reset="onReset" v-if="show">
       <b-form-group
@@ -95,15 +95,27 @@
 
 @media screen and (min-width: 200px) {
 
-  .top{
-    background-color: #5bc0be;
+  #main{
+    margin-right: 1rem;
+    margin-left: 1rem;
+  border: 3px solid white;
+  border-radius: 15px;
+  padding: 1rem;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 0;
+  background-color: #5bc0be9a;
+    /* background-color: transparent; */
   /* padding-top: 2rem; */
-  padding-bottom: 15rem;
+  /* padding-bottom: 15rem; */
   /* padding-bottom: 10rem; */
 }
 .form{
-  padding-left: 5rem;
-  padding-right: 5rem;
+ 
+  padding-left: .5rem;
+  padding-right: .5rem;
 }
 .title{
   display: flex;
@@ -112,7 +124,11 @@
 }
 }
 @media screen and (min-width: 500px) {
-
+  .form{
+ 
+ padding-left: 5rem;
+ padding-right: 5rem;
+}
 }
 
 
