@@ -92,6 +92,7 @@ align-items: center;
 
   transform: scaleX(-1);
 }
+
 .social-icons ul{
   background-color: #5bc0be9a;
     margin-top: 2rem;
@@ -109,7 +110,7 @@ align-items: center;
     margin-right:1rem;
     color:white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-size: 1.5rem;
+    font-size: 3rem;
   }
   .text{
     padding-top: 2rem;

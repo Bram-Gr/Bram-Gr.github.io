@@ -12,27 +12,30 @@
       type="light"
       class="navigation-menu navigation-container"
     >
-    <b-nav-item v-if="mobile" style="position:absolute; top: 0; list-style:none; font-size: 2rem"  @click="scrollTo('#home', 'home')"
-        >
-      [bram.com]
-        </b-nav-item
-      >
+  
 
 
-      <b-navbar-brand v-else class="logo" @click="scrollTo('#home', 'home')"
+      <b-navbar-brand class="logo" @click="scrollTo('#home', 'home')"
         >
-        <span   :class="{ 'active': activeBreadcrumb === 'home' }">[bram.com]</span>
+        <span   :class="{ 'active': activeBreadcrumb === 'home' }">Bram-Gr</span>
         </b-navbar-brand
       >
 
 
 
 <div class="collapse-nav" v-if="mobile">
+
+  <!-- <b-nav-item  style="position:absolute; top: 0; list-style:none; font-size: 2rem"  @click="scrollTo('#home', 'home')"
+        >
+      [bram.com]
+        </b-nav-item
+      >
+    </div> -->
       <b-navbar-toggle class="navbar-toggler-icon" target="nav-collapse"
       >&nbsp;</b-navbar-toggle
     >
 
-    <b-collapse class="navigation-menu-labels" is-nav id="nav-collapse">
+    <b-collapse  class="navigation-menu-labels" is-nav id="nav-collapse">
       <b-navbar-nav class="ml-auto">
         <b-nav-item class="ml-auto" @click="scrollTo('#about', 'about')">
         About
@@ -71,6 +74,7 @@
         >
       </b-breadcrumb>
     </b-navbar>
+
   </div>
 
 
@@ -175,7 +179,13 @@ export default {
   <style scoped>
 
 @media screen and (min-width: 200px) {
-
+.collapse-nav{
+  padding-top: 1rem;
+  padding-right: .4rem;
+ right: 0;
+ top: 0;
+ position: fixed;
+}
 
   button.navbar-toggler.navbar-toggler-icon.not-collapsed {
   
@@ -271,7 +281,7 @@ margin-top: 8rem;
 }
   .section:nth-child(4){
 
-margin-top: 5rem;
+margin-top: 25rem;
 
 }
 
