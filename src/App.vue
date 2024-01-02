@@ -12,13 +12,50 @@
       type="light"
       class="navigation-menu navigation-container"
     >
-      <b-navbar-brand class="logo" @click="scrollTo('#home', 'home')"
+    <b-nav-item v-if="mobile" style="position:absolute; top: 0; list-style:none; font-size: 2rem"  @click="scrollTo('#home', 'home')"
         >
-        <span :class="{ 'active': activeBreadcrumb === 'home' }">[bram.com]</span>
+      [bram.com]
+        </b-nav-item
+      >
+
+
+      <b-navbar-brand v-else class="logo" @click="scrollTo('#home', 'home')"
+        >
+        <span   :class="{ 'active': activeBreadcrumb === 'home' }">[bram.com]</span>
         </b-navbar-brand
       >
 
-      <b-breadcrumb class="breadcrumbs">
+
+
+<div class="collapse-nav" v-if="mobile">
+      <b-navbar-toggle class="navbar-toggler-icon" target="nav-collapse"
+      >&nbsp;</b-navbar-toggle
+    >
+
+    <b-collapse class="navigation-menu-labels" is-nav id="nav-collapse">
+      <b-navbar-nav class="ml-auto">
+        <b-nav-item class="ml-auto" @click="scrollTo('#about', 'about')">
+        About
+         </b-nav-item
+        >
+        <b-nav-item class="ml-auto"  @click="scrollTo('#portfolio', 'portfolio')">
+       Portfolio
+         </b-nav-item
+        >
+        <b-nav-item class="ml-auto" @click="scrollTo('#contact', 'contact')">
+         Contact
+         </b-nav-item
+        >
+     
+
+      
+      </b-navbar-nav>
+    </b-collapse>
+</div>
+
+
+
+      <b-breadcrumb class="breadcrumbs" v-else>
         <b-breadcrumb-item @click="scrollTo('#about', 'about')">
           <span :class="{ 'active': activeBreadcrumb === 'about' }">About</span>
         </b-breadcrumb-item>
@@ -87,6 +124,7 @@ export default {
     return{
       activeBreadcrumb: null,
       userScrolled: false,
+      mobile: window.innerWidth < 500
     }
   },
   mounted() {
@@ -138,6 +176,27 @@ export default {
 
 @media screen and (min-width: 200px) {
 
+
+  button.navbar-toggler.navbar-toggler-icon.not-collapsed {
+  
+    position:absolute;
+    right: 0;
+    top:0;
+    margin:.5rem;
+    padding: 1rem;
+  }
+  button.navbar-toggler.navbar-toggler-icon.collapsed {
+  
+  position:absolute;
+  right: 0;
+  top:0;
+  margin:.5rem;
+  padding: 1rem;
+}
+.navigation-menu-labels{
+margin-top: 2rem;
+text-align: right;
+}
 .wave-container{
   /* position:absolute;
   z-index: 1; */
