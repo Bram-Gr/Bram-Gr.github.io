@@ -45,12 +45,19 @@ methods: {
 }
 </script>
 
+
+
 <style scoped>
+
+
+
+
 .line{
     position: absolute;
-    width: 100%;
-    overflow: hidden;
+    width: 200%;
+    
     height: 100%;
+    background: transparent;  
 }
 
 #main{
@@ -59,7 +66,7 @@ methods: {
     right: 0;
     top: 0;
     bottom: 0;
-    margin: auto;
+    margin:auto;
     overflow: hidden;
 }
 .line-1{
@@ -76,44 +83,148 @@ methods: {
   z-index: 5;
 }
 
-.wave{
+.wave {
    position: absolute;
    bottom: 0;
   left: 0;
   width: 200%;
-  height: 12rem;
-  background-repeat: repeat no-repeat;
+  height: 8rem;
   background-position: 0 bottom;
-  transform-origin: center bottom; 
+  transform-origin: center bottom;
+  background-repeat: repeat no-repeat;  
+
+
 }
 
 .wave1{
     -webkit-background-size: 50% 80px;
-    background-size: 50% 80px
+    background-size: 50% 80px;
+    animation: animate 10s linear .8s infinite;
 }
 
 .wave2{
     -webkit-background-size: 50% 100px;
     background-size: 50% 100px;
-    animation: animate 12s linear infinite;
+    animation: animate2 14s linear infinite;
 }
 
 .wave3{
     -webkit-background-size: 50% 80px;
     background-size: 50% 80px;
-    animation: animate 18s linear infinite;
+    animation: animate3 16s linear infinite;
 }
 
+
 @keyframes animate{
-    0%{
+  0% {
         transform: translateX(0) translateZ(0) scaleY(1);
-    }
-    50%{
-        transform: translateX(-25%) translateZ(0) scaleY(.5);
+        opacity: 0;
+  }
+  20% {
+        transform: translateX(-25%) translateZ(0) scaleY(1);
+        opacity: .5;
+  }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.5);
+        opacity: 1;
     }  
-    100%{
-        transform: translateX(-50%) translateZ(0) scaleY(1);
+    80% {
+        transform: translateX(-25%) translateZ(0) scaleY(1);
+        opacity: 1;
     }
+    90% {
+        transform: translateX(-50%) translateZ(0) scaleY(1);
+        opacity: .5;
+    }
+
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1);
+        opacity: 0;
+    }
+
+
+    
 }
+
+
+
+@keyframes animate2{
+  0% {
+        transform: translateX(0) translateZ(0) scaleY(1);
+        opacity: 0;
+    }
+    20% {
+        transform: translateX(0) translateZ(0) scaleY(1);
+        opacity: .2;
+    }
+    30% {
+        transform: translateX(0) translateZ(0) scaleY(1);
+        opacity: .5;
+    }
+    40% {
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.5);
+        opacity: 1;
+    }  
+    60% {
+      transform: translateX(-25%) translateZ(0) scaleY(0.5);
+        opacity: 1;
+    }
+    80% {
+        opacity: .5;
+    }
+    90% {
+        opacity: .5;
+    }
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1);
+        opacity: 0;
+    }
+
+
+    
+}
+
+@keyframes animate3{
+  0% {
+        transform: translateX(0) translateZ(0) scaleY(1);
+        opacity: 0;
+    }
+    20% {
+        transform: translateX(0) translateZ(0) scaleY(1);
+        opacity: .5;
+    }
+    30% {
+        transform: translateX(0) translateZ(0) scaleY(1);
+        opacity: .5;
+    }
+    40% {
+        opacity: .5;
+    }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.5);
+        opacity: 1;
+    }  
+    60% {
+      transform: translateX(-25%) translateZ(0) scaleY(0.5);
+        opacity: 1;
+    }
+    80% {
+        opacity: .5;
+    }
+    90% {
+        opacity: .2;
+    }
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1);
+        opacity: 0;
+    }
+
+
+    
+}
+
 
 </style>
