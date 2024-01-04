@@ -2,23 +2,9 @@
   <div id="main">
     <div class="title">Contact Me</div>
     <b-form  class="form" @submit="onSubmit" @reset="onReset" v-if="show">
-      <b-form-group
-        id="input-group-1"
-        label="Email address:"
-        label-for="input-1"
-        description="We'll never share your email with anyone else."
-      >
-        <b-form-input
-          id="input-1"
-          v-model="form.email"
-          type="email"
-          placeholder="Enter email"
-          required
-        ></b-form-input>
-      </b-form-group>
 
-      <b-form-group id="input-group-2" label="Your Name:" label-for="input-2">
-        <b-form-input
+      <b-form-group id="input-group-2" label="Name:" label-for="input-2">
+        <b-form-input  class="lable"
           id="input-2"
           v-model="form.name"
           placeholder="Enter name"
@@ -26,32 +12,42 @@
         ></b-form-input>
       </b-form-group>
 
-      <b-form-group id="input-group-3" label="Food:" label-for="input-3">
-        <b-form-select
-          id="input-3"
-          v-model="form.food"
-          :options="foods"
+      <b-form-group
+        id="input-group-1"
+        label="Contact Information (Email, linkedIn, or GitHub):"
+        label-for="input-1"
+      >
+        <b-form-input class="lable"
+          id="input-1"
+          v-model="form.contact"
+          pattern=".*\.com.*"
+          placeholder="Enter contact url"
           required
-        ></b-form-select>
+        ></b-form-input>
+        
       </b-form-group>
 
-      <b-form-group id="input-group-4" v-slot="{ ariaDescribedby }">
-        <b-form-checkbox-group
-          v-model="form.checked"
-          id="checkboxes-4"
-          :aria-describedby="ariaDescribedby"
-        >
-          <b-form-checkbox value="me">Check me out</b-form-checkbox>
-          <b-form-checkbox value="that">Check that out</b-form-checkbox>
-        </b-form-checkbox-group>
+
+      <b-form-group
+        id="input-group-1"
+        label="Message:"
+        label-for="input-1"
+      >
+        <b-form-textarea  class="lable"
+          no-resize
+          id="textarea-no-resize"
+          v-model="form.message"
+          placeholder="Enter message"
+          required
+          rows="6"
+        ></b-form-textarea>
       </b-form-group>
+  
 
       <b-button type="submit" variant="primary">Submit</b-button>
       <b-button type="reset" variant="danger">Reset</b-button>
     </b-form>
-    <!-- <b-card class="mt-3" header="Form Data Result">
-      <pre class="m-0">{{ form }}</pre>
-    </b-card> -->
+ 
   </div>
 </template>
 
@@ -60,12 +56,11 @@
     data() {
       return {
         form: {
-          email: '',
+          contact: '',
+          message: '',
           name: '',
-          food: null,
-          checked: []
+
         },
-        foods: [{ text: 'Select One', value: null }, 'Carrots', 'Beans', 'Tomatoes', 'Corn'],
         show: true
       }
     },
@@ -77,10 +72,9 @@
       onReset(event) {
         event.preventDefault()
         // Reset our form values
-        this.form.email = ''
+        this.form.contact = ''
         this.form.name = ''
-        this.form.food = null
-        this.form.checked = []
+        this.form.message = ''
         // Trick to reset/clear native browser form validation state
         this.show = false
         this.$nextTick(() => {
@@ -95,10 +89,13 @@
 
 @media screen and (min-width: 200px) {
 
+.lable{
+  width: 40rem;
+  margin-bottom: 1rem;
+}
   #main{
     margin-right: 1rem;
     margin-left: 1rem;
-
   padding: 1rem;
   position: absolute;
   display: flex;
@@ -106,10 +103,6 @@
   flex-direction: column;
   z-index: 0;
   background-color: #5bc0be9a;
-    /* background-color: transparent; */
-  /* padding-top: 2rem; */
-  /* padding-bottom: 15rem; */
-  /* padding-bottom: 10rem; */
 }
 .form{
  
@@ -119,7 +112,7 @@
 .title{
   display: flex;
   justify-content: center;
-  /* margin-top:2rem; */
+  font-size: 2rem;
 }
 }
 @media screen and (min-width: 500px) {
@@ -129,9 +122,8 @@
   border-radius: 15px;
   }
   .form{
- 
- padding-left: 5rem;
- padding-right: 5rem;
+ padding-left: 2rem;
+ padding-right: 2rem;
 }
 }
 
