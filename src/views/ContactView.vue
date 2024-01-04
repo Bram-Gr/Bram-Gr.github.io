@@ -98,8 +98,7 @@
   #main{
     margin-right: 1rem;
     margin-left: 1rem;
-  border: 3px solid white;
-  border-radius: 15px;
+
   padding: 1rem;
   position: absolute;
   display: flex;
@@ -124,6 +123,11 @@
 }
 }
 @media screen and (min-width: 500px) {
+
+  #main{
+    border: 3px solid white;
+  border-radius: 15px;
+  }
   .form{
  
  padding-left: 5rem;

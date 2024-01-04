@@ -128,7 +128,7 @@ export default {
         if (element) {
           const rect = element.getBoundingClientRect();
 
-          console.log(section, rect.top, rect.bottom);
+          // console.log(section, rect.top, rect.bottom);
 
           if (rect.top <= window.innerHeight / 2 && rect.bottom > 0) {
             this.activeBreadcrumb = section;
@@ -193,7 +193,7 @@ export default {
   }
   .section:nth-child(4) {
     position: inherit;
-    margin-top: 28rem;
+    margin-top: 14rem;
     display: flex;
     justify-content: center;
     /* z-index: -1; */

@@ -25,8 +25,8 @@ export default {
     data(){
     return{
       isWideScreen: window.innerWidth > 500,
-      wave1: wave1,
-      wave2: wave2,
+      wave1:  wave1,
+      wave2:  wave2,
       wave3: wave3
     }
   },
@@ -106,6 +106,7 @@ methods: {
     -webkit-background-size: 50% 100px;
     background-size: 50% 100px;
     animation: animate2 14s linear infinite;
+    
 }
 
 .wave3{
@@ -116,6 +117,7 @@ methods: {
 
 
 @keyframes animate{
+  
   0% {
         transform: translateX(0) translateZ(0) scaleY(1);
         opacity: 0;
