@@ -1,6 +1,6 @@
 <template>
   <div id="main">
-    <div class="title">Contact</div>
+    <div class="title">Contact Me</div>
     <b-form  class="form" @submit="onSubmit" @reset="onReset" v-if="show">
       <b-form-group
         id="input-group-1"

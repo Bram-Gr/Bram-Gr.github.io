@@ -193,7 +193,7 @@ export default {
   }
   .section:nth-child(4) {
     position: inherit;
-    margin-top: 14rem;
+    margin-top: 10rem;
     display: flex;
     justify-content: center;
     /* z-index: -1; */
