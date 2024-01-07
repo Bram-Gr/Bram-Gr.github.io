@@ -59,15 +59,18 @@
           contact: '',
           message: '',
           name: '',
-
+          recipientEmail: 'bramzachgroen@gmail.com',
+          subject: 'Email from Portfolio Site',
+          body: this.name + " " + this.contact + " " + this.message 
         },
         show: true
       }
     },
     methods: {
       onSubmit(event) {
-        event.preventDefault()
-        alert(JSON.stringify(this.form))
+        event.preventDefault();
+        alert("Message received! Bram will contact you in 1-3 business days.");
+        window.location.reload();
       },
       onReset(event) {
         event.preventDefault()
@@ -88,14 +91,16 @@
 <style scoped>
 
 @media screen and (min-width: 200px) {
-
+button{
+  margin-right: .5rem;
+}
 .lable{
-  width: 40rem;
+  width: 16rem;
   margin-bottom: 1rem;
 }
   #main{
-    margin-right: 1rem;
-    margin-left: 1rem;
+    /* margin-right: 1rem;
+    margin-left: 1rem; */
   padding: 1rem;
   position: absolute;
   display: flex;
@@ -115,6 +120,24 @@
   font-size: 2rem;
 }
 }
+
+
+@media screen and (min-width:345px){
+
+  .lable{
+width: 19rem;
+}
+
+}
+
+@media screen and (min-width:380px){
+
+.lable{
+width: 22rem;
+}
+
+}
+
 @media screen and (min-width: 500px) {
 
   #main{
@@ -124,6 +147,16 @@
   .form{
  padding-left: 2rem;
  padding-right: 2rem;
+}
+.lable{
+  width: 25rem;
+  margin-bottom: 1rem;
+}
+}
+
+@media screen and (min-width:800px) {
+  .lable{
+  width: 40rem;
 }
 }
 

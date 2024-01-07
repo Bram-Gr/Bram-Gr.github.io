@@ -25,7 +25,7 @@ export default {
 data(){
   return {
     headshot: headshot,
-    isWideScreen: window.innerWidth > 500
+    isWideScreen: window.innerWidth > 530
   }
 },
 mounted() {
@@ -36,7 +36,7 @@ mounted() {
   },
 methods: {
     handleResize() {
-      this.isWideScreen = window.innerWidth > 500;
+      this.isWideScreen = window.innerWidth > 530;
     },
     handleRouterLinkClick() {
       // Emit a custom event to notify the parent component
@@ -119,7 +119,7 @@ align-items: center;
 }
 @media screen and (min-width: 500px) {
   .headshot{
-  height: 45vh;
+  height: 38vh;
   }
   .text{
     padding-top: 3rem;
@@ -129,6 +129,23 @@ align-items: center;
   li a, .envelope{
     margin-right:2rem;
     font-size: 2.5rem;
+  }
+
+
+
+
+  li a, .envelope{
+    font-size: 2rem;
+  }
+}
+
+
+@media screen and (min-width: 750px) {
+  li a, .envelope{
+    font-size: 3rem;
+  }
+  .headshot{
+  height: 45vh;
   }
 }
 </style>
