@@ -1,7 +1,7 @@
 <template>
   <div id="main">
     <div class="title">Contact Me</div>
-    <b-form  class="form" @submit="onSubmit" @reset="onReset" v-if="show">
+    <b-form  class="form" @submit="onSubmit" @reset="onReset" v-if="show" netlify>
 
       <b-form-group id="input-group-2" label="Name:" label-for="input-2">
         <b-form-input  class="lable"
@@ -59,18 +59,41 @@
           contact: '',
           message: '',
           name: '',
-          recipientEmail: 'bramzachgroen@gmail.com',
-          subject: 'Email from Portfolio Site',
-          body: this.name + " " + this.contact + " " + this.message 
+          subject: 'Email from Portfolio Site'
         },
         show: true
       }
     },
     methods: {
       onSubmit(event) {
+        console.log(this.form.name, this.form.message)
+        fetch('/.netlify/functions/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          subject: this.form.subject,
+          body: `Name: ${this.form.name}\nContact: ${this.form.contact}\nMessage: ${this.form.message}`       
+        }),
+      })
+      .then((response) => {
+    console.log('Response status:', response.status);
+    console.log('Response headers:', response.headers);
+    return response.json();
+  })
+  .then((data) => {
+    console.log('Data received:', data);
+    // Handle success or error response from the server
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+        
         event.preventDefault();
         alert("Message received! Bram will contact you in 1-3 business days.");
         window.location.reload();
+
       },
       onReset(event) {
         event.preventDefault()

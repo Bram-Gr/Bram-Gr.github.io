@@ -12,7 +12,7 @@
         class="navigation-menu navigation-container"
       >
         <b-navbar-brand class="logo" @click="scrollTo('#home', 'home')">
-          <span :class="{ active: activeBreadcrumb === 'home' }">bram-gr</span>
+          <span :class="{ active: activeBreadcrumb === 'home' }">Bram-Gr</span>
         </b-navbar-brand>
 
         <div class="collapse-nav" v-if="mobile">
@@ -106,7 +106,7 @@ export default {
   },
   data() {
     return {
-      activeBreadcrumb: null,
+      activeBreadcrumb: '',
       userScrolled: false,
       mobile: window.innerWidth < 500,
     };
@@ -139,14 +139,16 @@ export default {
     handleRouterLinkClicked(route) {
       this.userScrolled = true;
       this.scrollTo(`#${route}`, route);
+      
     },
     scrollTo(selector, targetId) {
       const element = document.querySelector(selector);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
         setTimeout(() => {
-         
+          console.log("Timeout executed");
           this.activeBreadcrumb = targetId;
+          console.log(this.activeBreadcrumb)
         }, 500);
       }
     },
@@ -231,10 +233,10 @@ export default {
     text-decoration: none;
     color: #1c2541;
   }
-  .router-link-exact-active {
+  /* .router-link-exact-active {
     font-weight: bold;
     text-decoration: underline;
-  }
+  } */
 
   #app {
     /* height: 100%; */
@@ -245,6 +247,7 @@ export default {
   .active {
     /* font-weight: bold; */
     text-decoration: underline;
+    text-decoration-thickness: 3px;
   }
   .section {
     padding-top: 7rem;

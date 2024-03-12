@@ -2,7 +2,10 @@
 <template>
   <div class="portfolio-page">
     <h1 class="title">Projects</h1>
-
+    <!-- 
+      Quizzical Card
+      text: "A personal project and full stack web app that allows registered users to make virtual note cards for studying on browser or mobile.",
+          urlWeb: "https://quizzical-learning.netlify.app/", -->
     <div class="cards-section">
       <b-card
         no-body
@@ -39,15 +42,14 @@ export default {
           id: 1,
           image: quizzical,
           title: "Quizzical",
-          text: "Quizzical is a personal project of mine. It's a full stack web app that allows registered users to make virtual note cards for studying on browser or mobile.",
-          urlWeb: "https://quizzical-learning.netlify.app/",
+          text: "A full stack application that lets registered users make virtual note cards for studying on browser or mobile. This site is currently under maintenance.",
           urlCode: "https://github.com/Bram-Gr/Quizzical",
         },
         {
           id: 2,
           image: beerbuddy,
           title: "Beer Buddy",
-          text: "",
+          text: "The final project I worked on to earn my certificate from Tech Elevator. I worked with a great team to produce beer buddy and solidify the concepts I learned.",
           urlWeb: "http://brewerybeerbuddy.com/",
           urlCode: "https://github.com/Bram-Gr/brewery-finder",
         },
@@ -55,7 +57,7 @@ export default {
           id: 3,
           image: atm,
           title: "CMD ATM",
-          text: "",
+          text: "A fully backend program that utilizes business logic to facilitate financial transactions. It has a command line interface for user input.",
           urlWeb: null,
           urlCode: "https://github.com/Bram-Gr/Virtual_ATM",
         },
@@ -84,7 +86,7 @@ export default {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(128, 128, 128, 0.562);
+    background-color: rgba(128, 128, 128, 0.799);
   }
   .card {
     background-color: #5bc0be9a;

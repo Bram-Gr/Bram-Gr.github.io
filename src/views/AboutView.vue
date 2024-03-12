@@ -1,10 +1,13 @@
 <template>
   <div class="about">
-    <p>  Hi I’m Bram, in 2015 I graduated from Rutgers University with a Bachelors in 
-                Human Resources and Labor studies. I was privileged to have met and collaborated 
-                with exceptionally talented individuals in classes that helped me develop event 
-                coordination and networking skills. If you would like to know more please add me 
-                to your professional network, I’d love to start a conversation!</p>
+    <p>  
+Bram Groen is a passionate software developer proficient in leveraging the MVC model and 
+excelling in an agile Software Development Life Cycle (SDLC) environment. 
+With a strong emphasis on Relational Database architecture, Bram specializes in 
+crafting robust RESTful APIs and Single Page Applications (SPAs). 
+You can explore his projects and connect with 
+Bram on this webpage. 
+Cheers to building exceptional software together!</p>
   </div>
 </template>
 <style scoped>

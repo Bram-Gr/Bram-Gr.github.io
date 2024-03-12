@@ -51,5 +51,6 @@ a{
 .router-link-exact-active{
     font-weight: bold;
   text-decoration: underline;
+
 }
 </style>
